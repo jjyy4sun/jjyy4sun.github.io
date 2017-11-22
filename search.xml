@@ -5,17 +5,18 @@
     <entry>
       <title><![CDATA[网络爬虫介绍]]></title>
       <url>/title/</url>
-      <content type="html"><![CDATA[<h1 id="什么是网络爬虫"><a href="#什么是网络爬虫" class="headerlink" title="什么是网络爬虫?"></a>什么是网络爬虫?</h1><p>简而言之爬虫就是一个自动抓取网页信息的程序或脚本。<br>当然，抓取也不是漫无目的的。爬虫设计者会制定一些规则，从而使得<br>爬虫抓取出来信息具有意义和使用价值。</p>
-<h1 id="爬虫的构成"><a href="#爬虫的构成" class="headerlink" title="爬虫的构成"></a>爬虫的构成</h1><p>控制节点、爬虫节点、资源库三部分构成。</p>
+      <content type="html"><![CDATA[<h3 id="什么是网络爬虫"><a href="#什么是网络爬虫" class="headerlink" title="什么是网络爬虫?"></a>什么是网络爬虫?</h3><p>简而言之爬虫就是一个自动抓取网页信息的程序或脚本。<br>当然，抓取也不是漫无目的的。爬虫设计者会制定一些规则，从而使得<br>爬虫抓取出来信息具有意义和使用价值。</p>
+<h3 id="爬虫的构成"><a href="#爬虫的构成" class="headerlink" title="爬虫的构成"></a>爬虫的构成</h3><p>控制节点、爬虫节点、资源库三部分构成。</p>
 <ol>
 <li>控制节点：根据 URL 链接来分配线程，并调用爬虫节点进行具体爬行。</li>
 <li>爬虫节点：下载网页、处理文本、过滤链接、分析数据等。</li>
 <li>用来存储下载下来的数据，并生成索引供用户检索。</li>
 </ol>
-<h1 id="爬虫分类"><a href="#爬虫分类" class="headerlink" title="爬虫分类"></a>爬虫分类</h1><h2 id="通用爬虫"><a href="#通用爬虫" class="headerlink" title="通用爬虫"></a>通用爬虫</h2><p>  通用网络爬虫又称全网爬虫，爬行对象从一些种子 URL 扩充到整个 Web。主要用于搜索引擎。<br>通用网络爬虫的结构大致可以分为页面爬行模块 、页面分析模块、链接过滤模块、页面数据库、URL 队列、初始 URL 集合几个部分。为提高工作效率，通用网络爬虫会采取一定的爬行策略。</p>
-<h2 id="聚焦爬虫"><a href="#聚焦爬虫" class="headerlink" title="聚焦爬虫"></a>聚焦爬虫</h2><p>  又称主题网络爬虫，选择性地爬行那些与预先定义好的主题相关页面的网络爬虫。聚焦网络爬虫和通用网络爬虫相比，增加了链接评价模块以及内容评价模块。</p>
-<h2 id="增量爬虫"><a href="#增量爬虫" class="headerlink" title="增量爬虫"></a>增量爬虫</h2><p>  增量式网络爬虫是指对已下载网页采取增量式更新和只爬行新产生的或者已经发生变化网页的爬虫，它能够在一定程度上保证所爬行的页面是尽可能新的页面。</p>
-<h2 id="深度爬虫"><a href="#深度爬虫" class="headerlink" title="深度爬虫"></a>深度爬虫</h2><p> Web 页面按存在方式可以分为表层网页和深层网页。表层网页是指传统搜索引擎可以索引的页面，以超链接可以到达的静态网页为主构成的 Web 页面。Deep Web 是那些大部分内容不能通过静态链接获取的、隐藏在搜索表单后的，只有用户提交一些关键词才能获得的 Web 页面。自动填写表单，爬取深层网页是深度爬虫的任务。</p>
+<hr>
+<h3 id="爬虫分类"><a href="#爬虫分类" class="headerlink" title="爬虫分类"></a>爬虫分类</h3><h4 id="通用爬虫"><a href="#通用爬虫" class="headerlink" title="通用爬虫"></a>通用爬虫</h4><p>  通用网络爬虫又称全网爬虫，爬行对象从一些种子 URL 扩充到整个 Web。主要用于搜索引擎。<br>通用网络爬虫的结构大致可以分为页面爬行模块 、页面分析模块、链接过滤模块、页面数据库、URL 队列、初始 URL 集合几个部分。为提高工作效率，通用网络爬虫会采取一定的爬行策略。</p>
+<h4 id="聚焦爬虫"><a href="#聚焦爬虫" class="headerlink" title="聚焦爬虫"></a>聚焦爬虫</h4><p>  又称主题网络爬虫，选择性地爬行那些与预先定义好的主题相关页面的网络爬虫。聚焦网络爬虫和通用网络爬虫相比，增加了链接评价模块以及内容评价模块。</p>
+<h4 id="增量爬虫"><a href="#增量爬虫" class="headerlink" title="增量爬虫"></a>增量爬虫</h4><p>  增量式网络爬虫是指对已下载网页采取增量式更新和只爬行新产生的或者已经发生变化网页的爬虫，它能够在一定程度上保证所爬行的页面是尽可能新的页面。</p>
+<h4 id="深度爬虫"><a href="#深度爬虫" class="headerlink" title="深度爬虫"></a>深度爬虫</h4><p> Web 页面按存在方式可以分为表层网页和深层网页。表层网页是指传统搜索引擎可以索引的页面，以超链接可以到达的静态网页为主构成的 Web 页面。Deep Web 是那些大部分内容不能通过静态链接获取的、隐藏在搜索表单后的，只有用户提交一些关键词才能获得的 Web 页面。自动填写表单，爬取深层网页是深度爬虫的任务。</p>
 ]]></content>
       
         <categories>
@@ -37,14 +38,14 @@
   
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[timeline]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[timeline]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
