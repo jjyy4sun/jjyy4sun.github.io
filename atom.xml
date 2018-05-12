@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jjyy4sun.github.io/"/>
-  <updated>2017-11-22T14:14:10.000Z</updated>
+  <updated>2018-05-12T16:40:21.000Z</updated>
   <id>http://jjyy4sun.github.io/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CMake简介</title>
+    <link href="http://jjyy4sun.github.io/2018/05/13/title/"/>
+    <id>http://jjyy4sun.github.io/2018/05/13/title/</id>
+    <published>2018-05-12T16:02:02.000Z</published>
+    <updated>2018-05-12T16:40:21.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CMake&quot;&gt;&lt;a href=&quot;#CMake&quot; class=&quot;headerlink&quot; title=&quot;CMake&quot;&gt;&lt;/a&gt;CMake&lt;/h1&gt;&lt;h2 id=&quot;什么是-CMake&quot;&gt;&lt;a href=&quot;#什么是-CMake&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程实用技术" scheme="http://jjyy4sun.github.io/categories/%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="cmake" scheme="http://jjyy4sun.github.io/tags/cmake/"/>
+    
+  </entry>
+  
+  <entry>
     <title>网络爬虫介绍</title>
-    <link href="http://jjyy4sun.github.io/title/"/>
-    <id>http://jjyy4sun.github.io/title/</id>
+    <link href="http://jjyy4sun.github.io/2017/11/07/title/"/>
+    <id>http://jjyy4sun.github.io/2017/11/07/title/</id>
     <published>2017-11-07T14:11:17.000Z</published>
     <updated>2017-11-22T14:14:10.000Z</updated>
     
