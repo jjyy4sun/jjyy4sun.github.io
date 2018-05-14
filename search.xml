@@ -3,8 +3,72 @@
   
     
     <entry>
+      <title><![CDATA[01背包]]></title>
+      <url>/2018-05-13-01%E8%83%8C%E5%8C%85.html</url>
+      <content type="html"><![CDATA[<h1 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h1><h2 id="01背包描述"><a href="#01背包描述" class="headerlink" title="01背包描述"></a>01背包描述</h2><p>有N件物品和一个容量为V的背包。第 i 件物品的重量是c[i],价值为 w[i]。求解将那些物品装入背包可以使价值最大。</p>
+<p>但是为什么会叫它01背包呢？其实这里的01指的是状态，当把物品装进去那么状态就是1，不装就是0.</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>01背包问题其实就是动态规划，那么解决动态规划的思路就一个，找到状态转移方程即可。</p>
+<p>那么01背包的状态转移方程是：</p>
+<blockquote>
+<p>dp[i][j] = max(dp[i-1][j],dp[i-1][j-weight[i]]+value[i])</p>
+</blockquote>
+<p>dp[i][j]表示的就是第i个物品，重量为j的物品价值。那么从哪几个状态可以转化到这个状态呢。有两个:</p>
+<ol>
+<li>dp[i-1][j]不把第i件物品放入背包。</li>
+<li>dp[i-1][j-weight[i]]+value[i]把第i件物品放入背包。</li>
+</ol>
+<p>多说无益，直接上代码：</p>
+<pre><code>int dp[100][100] = {0};//记录每种情况下物品总价值
+int wight[100];//每种物品的重量
+int value[100];//每种物品的价值
+
+for(int i=1;i&lt;=50;i++)//50种物品
+{
+    for(int j = 0;j&lt;=80;j++)//背包可称重80
+    {
+        if(j&gt;weight[i])
+        {
+            dp[i][j] = max(dp[i-1][j],dp[i-1][j-weight[i]]+value[i])
+        }
+        else
+        {
+            dp[i][j] = dp[i-1][j];
+        }
+    }
+}
+
+reuturn dp[50][80];
+</code></pre><p>但是我们可以发现我们定义了一个二维数组，如果数据很大时，对内存的开销极大。为此我们可以使用滚动数组，简而言之滚动数组就是用后一个状态覆盖前一个状态。</p>
+<pre><code>for(i=1; i&lt;=n; i++)
+{
+    for(j = m;j&gt;=wight[i];j--)
+    {
+        dp[j] = max(dp[j],dp[j-weight[i]]+value[i]);
+    }
+}
+reuturn dp[m];
+</code></pre><p>出看可能有点难以理解，不过仔细研究发现内层循环每一次循环都是放第 i个物品的过程。每一次循环后得到一个一维数组 dp[m]。每个数组元素保存的就是放入第i个物品后的物品总价值。所以每次循环利用这个一维数组，滚动变成了二维数组。</p>
+<p>其实还有<strong><em>完全背包</em></strong>和<strong><em>多重背包</em></strong>的问题，这里不做细说。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 经典算法 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CMake简介]]></title>
-      <url>/2018/05/13/title/</url>
+      <url>/2018-05-13-CMake%E7%AE%80%E4%BB%8B.html</url>
       <content type="html"><![CDATA[<h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><h2 id="什么是-CMake"><a href="#什么是-CMake" class="headerlink" title="什么是 CMake"></a>什么是 CMake</h2><p>由于存在各种各样不同的平台，所以就产生了各种各样的 makefile 文件。当我们想使软件可以跨平台，那么我们不得不对每个平台编写一个 Makefile。</p>
 <p>这时候 cmake 就应运而生，它允许开发者只编写一个名为 CMakelists.txt的文件，就可以执行 cmake 后自动生成对应平台的 Makefile 文件。</p>
 <p>执行起来也非常简单，只需要 cmake PATH 即可，其中 PATH 就是 CMakeLists.txt 的路径。</p>
@@ -113,7 +177,7 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
     
     <entry>
       <title><![CDATA[网络爬虫介绍]]></title>
-      <url>/2017/11/07/title/</url>
+      <url>/2017-11-07-%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D.html</url>
       <content type="html"><![CDATA[<h3 id="什么是网络爬虫"><a href="#什么是网络爬虫" class="headerlink" title="什么是网络爬虫?"></a>什么是网络爬虫?</h3><p>简而言之爬虫就是一个自动抓取网页信息的程序或脚本。<br>当然，抓取也不是漫无目的的。爬虫设计者会制定一些规则，从而使得<br>爬虫抓取出来信息具有意义和使用价值。</p>
 <h3 id="爬虫的构成"><a href="#爬虫的构成" class="headerlink" title="爬虫的构成"></a>爬虫的构成</h3><p>控制节点、爬虫节点、资源库三部分构成。</p>
 <ol>
