@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018 | 
+            CMake简介 | 
         
         sun&#39;blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="sunT">
     <meta name="description" itemprop="description" content="suntian&#39;blog">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",cmake">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="YwsZIdUkBdJw1CGrW9cFeWwxVm-vMsNragWKyYym0Yw" />
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.stblog.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | sun&#39;blog">
+    <meta property="og:title" content="CMake简介 | sun&#39;blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="suntian&#39;blog">
-    
+    <meta property="og:article:tag" content="cmake"> 
 
+    
+        <meta property="article:published_time" content="5月 13, 2018" />
+        <meta property="article:modified_time" content="5月 13, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018 | sun&#39;blog">
+    <meta name="twitter:title" content="CMake简介 | sun&#39;blog">
     <meta name="twitter:description" content="suntian&#39;blog">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.stblog.top/archives/2018/index.html" />
+        <link rel="canonical" href="http://www.stblog.top/archives/aac1e10b.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "sun&#39;blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "sunT",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "栉风沐雨 砥砺前行"
+    },
+    "headline": "CMake简介",
+    "url": "http://www.stblog.top/archives/aac1e10b.html",
+    "datePublished": "5月 13, 2018",
+    "dateModified": "5月 13, 2018",
+    "description": "suntian&#39;blog",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.stblog.top"
+    }
+}
+</script>
 
 
     
@@ -274,214 +307,321 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/archives/f5c535ea.html">适配器模式</a></p>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
+    -->
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/archives/f5c535ea.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="sunT's avatar">
-            </div>
-            <div>
-                <strong>sunT</strong>
-                <span>5月 17, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是-CMake"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是 CMake</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何编写-CMakeLists-txt文件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">如何编写 CMakeLists.txt文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一个简单的例子"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">一个简单的例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多个目录及源文件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">多个目录及源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#gdb-相关设置"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">gdb 相关设置</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/archives/e0e8ca7f.html">01背包</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            01背包
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/archives/e0e8ca7f.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="sunT's avatar">
-            </div>
-            <div>
-                <strong>sunT</strong>
-                <span>5月 13, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/经典算法/">经典算法</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/archives/aac1e10b.html">CMake简介</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            CMake
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/archives/aac1e10b.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="sunT's avatar">
-            </div>
-            <div>
-                <strong>sunT</strong>
-                <span>5月 13, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/编程实用技术/">编程实用技术</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                CMake简介
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>sunT</strong>
+        <span>5月 13, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/cmake/">cmake</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake简介&url=http://www.stblog.top/archives/aac1e10b.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake简介&url=http://www.stblog.top/archives/aac1e10b.html&via=sunT" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.stblog.top/archives/aac1e10b.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><h2 id="什么是-CMake"><a href="#什么是-CMake" class="headerlink" title="什么是 CMake"></a>什么是 CMake</h2><p>由于存在各种各样不同的平台，所以就产生了各种各样的 makefile 文件。当我们想使软件可以跨平台，那么我们不得不对每个平台编写一个 Makefile。</p>
+<p>这时候 cmake 就应运而生，它允许开发者只编写一个名为 CMakelists.txt的文件，就可以执行 cmake 后自动生成对应平台的 Makefile 文件。</p>
+<p>执行起来也非常简单，只需要 cmake PATH 即可，其中 PATH 就是 CMakeLists.txt 的路径。</p>
+<h2 id="如何编写-CMakeLists-txt文件"><a href="#如何编写-CMakeLists-txt文件" class="headerlink" title="如何编写 CMakeLists.txt文件"></a>如何编写 CMakeLists.txt文件</h2><p>有上述可知，编写 CMakeLists.txt 成了使用 cmake 的关键。</p>
+<h3 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h3><pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本的要求
+cmake_minimum_required (VERSION 2.8)
+
+#项目信息
+project(Demo)
+
+#指定生成的目标
+add_executable(Demo main.c)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>#号是用来注释的。</p>
+<h3 id="多个目录及源文件"><a href="#多个目录及源文件" class="headerlink" title="多个目录及源文件"></a>多个目录及源文件</h3><p>我们在实际的生产环境中一般都是有多个目录和源文件的项目。所以如何利用 CMakeLists.txt 来构建整个项目才是学习的重点。</p>
+<p>假如我们的项目目前有main.c、libfunc.c、libfunc.h三个文件。那么我们的 CMakeLists.txt 就可以这么写。</p>
+<pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+
+#项目信息
+project (Demo2)
+
+#指定生成目标
+add_executable(Demo main.c libfunc.c)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如上我们只是在生成目标时，将 libfunc.c 加入而已。那么当我们有很多源文件那么一条一条的加入一定不是一个明智的做法。幸好我可以使用<code>aux_source_directory(&lt;dir&gt; &lt;variable&gt;)</code>来定义一个需要加入源文件的目录，所以我们可以将上面的 CMakeLists.txt 修改为。</p>
+<pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+#项目信息
+project (Demo2)
+#创建 DIR_SRCS 变量
+aux_source_directory(. DIR_SRCS)
+#指定生成目标
+add_executable(Demo ${DIR_SRCS})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>利用了 aux_source_directory 来定义了一个名为DIR_SRCS的变量，他的值为’.’。这样在生成目标的时候就可以不当前目录的所有源文件包含。</p>
+<p>如果我们的目录结构是 main.c 在根目录，而函数库定义的源文件libfunc.c 在 lib 目录下那又该如何编写 CMakeLists.txt 呢？<br>这时就该为每个目录编写一个 CMakeLists.txt 了。</p>
+<p>所以首先根目录的CMakeLists.txt：</p>
+<pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+#项目信息
+project (Demo3)
+#创建 DIR_SRCS 变量
+aux_source_directory(. DIR_SRCS)
+#添加  lib 子目录
+add_subdirectory(lib)
+#指定生成目标
+add_executable(Demo main.cc)
+#添加链接库
+target_link_libraries(Demo lib)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们看到了添加 lib 子目录add_subdirectory(lib)的命令。<br>然后就是 target_link_libraries（Demo lib）将 lib 库链接到最终生成的目标中。</p>
+<p>接下来我们在就可以在 lib 目录下编写CMakeLists.txt 了。</p>
+<pre><code>#创建 DIR_LIB_SRCS 变量
+aux_source_directory(. DIR_LIB_SRCS)
+#生成链接库
+add_library ( lib ${DIR_LIB_SRCS})
+</code></pre><p>可以看到的是我们使用了 add_library 将lib 生成静态链接库。</p>
+<p>掌握上述的知识点基本上就可以满足一般的需求了。但是 cmake 还是提供了一些更自由的方式。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>设置版本号</p>
+<pre><code>set (Tutorial_VERSION_MAJOR 1)
+set (Tutorial_VERSION_MINOR 0)
+
+configure_file(
+                                &quot;${PROJECT_SOURCE_DIR}/Config.h.in&quot;
+                                &quot;${PROJECT_SOURCE_DIR}/Config.h&quot;
+                                )
+</code></pre><p>在 Config.h.in 中定义：<br>在 Config.h.in 中定义：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
+#define Tutorial_VERSION_MINOR @ Tutorial_VERSION_MINOR@
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样 cmake 就会自动生成一个 Config.h 文件。<br>但是需要将 Config.h包含在要使用版本号的地方。然后就可以在源代码中使用Tutorial_VERSION_MAJOR和Tutorial_VERSION_MINOR了。</p>
+<p>还可使用 <code>include_directories(...)</code>指定头文件目录。</p>
+<p>设置选项：</p>
+<pre><code>option(USE_MYLIB
+                &quot;Use my own lib function&quot; ON)
+if (USE_MYLIB)
+  include_directories (&quot;${PROJECT_SOURCE_DIR}/lib&quot;)
+  add_subdirectory (lib)
+  set (EXTRA_LIBS ${EXTRA_LIBS} lib)
+endif (USE_MYLIB)
+</code></pre><p>在源代码中添加：</p>
+<pre><code>#ifdef USE_MYLIB
+  #include &quot;lib/libfunc.h&quot;
+#else
+</code></pre><h3 id="gdb-相关设置"><a href="#gdb-相关设置" class="headerlink" title="gdb 相关设置"></a>gdb 相关设置</h3><pre><code>set(CMAKE_BUILD_TYPE &quot;Debug&quot;)
+set(CMAKE_CXX_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g -ggdb&quot;)
+set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
+</code></pre><p>cmake 能做的还有很多诸如安装、测试、打包等操作。而且可以在 cmake 中定义函数和宏定义。你可以在<a href="https://cmake.org/" target="_blank" rel="external">cmake 官方网站</a>学习更多。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/archives/e0e8ca7f.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/archives/6adcba8e.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

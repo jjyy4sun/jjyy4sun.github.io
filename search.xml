@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[适配器模式]]></title>
-      <url>/2018-05-17-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F.html</url>
+      <url>/archives/f5c535ea.html</url>
       <content type="html"></content>
       
         
@@ -12,7 +12,7 @@
     
     <entry>
       <title><![CDATA[01背包]]></title>
-      <url>/2018-05-13-01%E8%83%8C%E5%8C%85.html</url>
+      <url>/archives/e0e8ca7f.html</url>
       <content type="html"><![CDATA[<h1 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h1><h2 id="01背包描述"><a href="#01背包描述" class="headerlink" title="01背包描述"></a>01背包描述</h2><p>有N件物品和一个容量为V的背包。第 i 件物品的重量是c[i],价值为 w[i]。求解将那些物品装入背包可以使价值最大。</p>
 <p>但是为什么会叫它01背包呢？其实这里的01指的是状态，当把物品装进去那么状态就是1，不装就是0.</p>
 <h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>01背包问题其实就是动态规划，那么解决动态规划的思路就一个，找到状态转移方程即可。</p>
@@ -76,7 +76,7 @@ reuturn dp[m];
     
     <entry>
       <title><![CDATA[CMake简介]]></title>
-      <url>/2018-05-13-CMake%E7%AE%80%E4%BB%8B.html</url>
+      <url>/archives/aac1e10b.html</url>
       <content type="html"><![CDATA[<h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><h2 id="什么是-CMake"><a href="#什么是-CMake" class="headerlink" title="什么是 CMake"></a>什么是 CMake</h2><p>由于存在各种各样不同的平台，所以就产生了各种各样的 makefile 文件。当我们想使软件可以跨平台，那么我们不得不对每个平台编写一个 Makefile。</p>
 <p>这时候 cmake 就应运而生，它允许开发者只编写一个名为 CMakelists.txt的文件，就可以执行 cmake 后自动生成对应平台的 Makefile 文件。</p>
 <p>执行起来也非常简单，只需要 cmake PATH 即可，其中 PATH 就是 CMakeLists.txt 的路径。</p>
@@ -185,7 +185,7 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
     
     <entry>
       <title><![CDATA[网络爬虫介绍]]></title>
-      <url>/2017-11-07-%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%BB%8B%E7%BB%8D.html</url>
+      <url>/archives/6adcba8e.html</url>
       <content type="html"><![CDATA[<h3 id="什么是网络爬虫"><a href="#什么是网络爬虫" class="headerlink" title="什么是网络爬虫?"></a>什么是网络爬虫?</h3><p>简而言之爬虫就是一个自动抓取网页信息的程序或脚本。<br>当然，抓取也不是漫无目的的。爬虫设计者会制定一些规则，从而使得<br>爬虫抓取出来信息具有意义和使用价值。</p>
 <h3 id="爬虫的构成"><a href="#爬虫的构成" class="headerlink" title="爬虫的构成"></a>爬虫的构成</h3><p>控制节点、爬虫节点、资源库三部分构成。</p>
 <ol>
