@@ -11,6 +11,3 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.stblog.top/sitemap.xml
-Sitemap: http://www.stblog.top/baidusitemap.xml
-
