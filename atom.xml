@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.stblog.top/"/>
-  <updated>2018-06-09T10:09:54.000Z</updated>
+  <updated>2018-08-09T14:05:53.000Z</updated>
   <id>http://www.stblog.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随机数</title>
+    <link href="http://www.stblog.top/archives/7c9eec8d.html"/>
+    <id>http://www.stblog.top/archives/7c9eec8d.html</id>
+    <published>2018-08-09T13:34:04.000Z</published>
+    <updated>2018-08-09T14:05:53.000Z</updated>
+    
+    <summary type="html">
+    
+      随机数
+    
+    </summary>
+    
+      <category term="c/c++" scheme="http://www.stblog.top/categories/c-c/"/>
+    
+    
+      <category term="c++" scheme="http://www.stblog.top/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>01背包</title>

@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[随机数]]></title>
+      <url>/archives/7c9eec8d.html</url>
+      <content type="html"><![CDATA[<h1 id="如何在c-产生随机数"><a href="#如何在c-产生随机数" class="headerlink" title="如何在c++产生随机数"></a>如何在c++产生随机数</h1><p>在 c++中要实现随机数生成，我们要使用 rand()和srand()两个函数来完成。但是rand()是用<a href="https://baike.baidu.com/item/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/5544515?fr=aladdin" target="_blank" rel="external">线性同余法</a>实现的，所以产生的不是真正的随机数。</p>
+<h2 id="rand"><a href="#rand" class="headerlink" title="rand()"></a>rand()</h2><p>单纯的rand()会返回一个0至RAND_MAX之间的随机数值,不过rand()是一次性的，因为系统默认的随机数种子为1，只要随机数种子不变，其生成的随机数序列就不会改变。</p>
+<h2 id="srand"><a href="#srand" class="headerlink" title="srand()"></a>srand()</h2><p>srand()可用来设置rand()产生随机数时的随机数种子。通过设置不同的种子，我们可以获取不同的随机数序列。可以利用srand((unsigned int)(time(NULL))的方法，利用系统时钟，产生不同的随机数种子。</p>
+<pre><code># include &lt;iostream&gt;
+# include &lt;cstdlib&gt;
+# include &lt;ctime&gt;
+using namespace std;
+int main()
+{
+    srand((unsigned)time(NULL));
+    for(int i=0;i&lt;10;i++)
+    cout&lt;&lt;rand()&lt;&lt;&#39; &#39;;
+    return 0;
+}
+</code></pre><h2 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h2><ul>
+<li>取得(0,x)的随机整数：rand()%x；</li>
+<li>取得(a,b)的随机整数：rand()%(b-a)；</li>
+<li>取得[a,b)的随机整数：rand()%(b-a)+a；</li>
+<li>取得[a,b]的随机整数：rand()%(b-a+1)+a；</li>
+<li>取得(a,b]的随机整数：rand()%(b-a)+a+1；</li>
+<li>取得0-1之间的浮点数：rand()/double(RAND_MAX)。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> c/c++ </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[01背包]]></title>
       <url>/archives/e0e8ca7f.html</url>
       <content type="html"><![CDATA[<h1 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h1><h2 id="01背包描述"><a href="#01背包描述" class="headerlink" title="01背包描述"></a>01背包描述</h2><p>有N件物品和一个容量为V的背包。第 i 件物品的重量是c[i],价值为 w[i]。求解将那些物品装入背包可以使价值最大。</p>

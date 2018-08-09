@@ -1,4 +1,102 @@
-<!DOCTYPE html><html style="display:none" lang="zh"><head><meta charset="utf-8"><script>window.materialVersion="1.4.0"</script><title> CMake简介 | sun&#39;blog</title><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://hm.baidu.com"><link rel="dns-prefetch" href="https://busuanzi.ibruce.info"><meta http-equiv="X-UA-Compatible"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="theme-color" content="#0097A7"><meta name="author" content="sunT"><meta name="description" itemprop="description" content="suntian&#39;blog"><meta name="keywords" content="suntian,cmake"><meta name="google-site-verification" content="YwsZIdUkBdJw1CGrW9cFeWwxVm-vMsNragWKyYym0Yw"><link rel="icon shortcut" type="image/ico" href="/img/favicon.png"><link rel="icon" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png"><meta name="apple-mobile-web-app-title" content="Title"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="480"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="sun&#39;blog"><meta property="og:url" content="http://www.stblog.top"><meta property="og:type" content="blog"><meta property="og:title" content="CMake简介 | sun&#39;blog"><meta property="og:image" content="/img/favicon.png"><meta property="og:description" content="suntian&#39;blog"><meta property="og:article:tag" content="cmake"><meta property="article:published_time" content="5月 13, 2018"><meta property="article:modified_time" content="6月 09, 2018"><meta name="twitter:title" content="CMake简介 | sun&#39;blog"><meta name="twitter:description" content="suntian&#39;blog"><meta name="twitter:image" content="/img/favicon.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="http://www.stblog.top"><link rel="canonical" href="http://www.stblog.top/archives/aac1e10b.html"><script type="application/ld+json">
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            CMake简介 | 
+        
+        sun&#39;blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="sunT">
+    <meta name="description" itemprop="description" content="suntian&#39;blog">
+    <meta name="keywords" content="suntian,cmake">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="YwsZIdUkBdJw1CGrW9cFeWwxVm-vMsNragWKyYym0Yw" />
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="sun&#39;blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://www.stblog.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="CMake简介 | sun&#39;blog">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="suntian&#39;blog">
+    <meta property="og:article:tag" content="cmake"> 
+
+    
+        <meta property="article:published_time" content="5月 13, 2018" />
+        <meta property="article:modified_time" content="6月 09, 2018" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="CMake简介 | sun&#39;blog">
+    <meta name="twitter:description" content="suntian&#39;blog">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://www.stblog.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://www.stblog.top/archives/aac1e10b.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -26,12 +124,381 @@
         "@id": "http://www.stblog.top"
     }
 }
-</script><!--[if lte IE 9]><link rel="stylesheet" href="/css/ie-blocker.css"><script src="/js/ie-blocker.zhCN.js"></script><![endif]--><script>window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},versionString="/*"+materialVersion+"*/",lsloader.clean=function(){try{for(var e=[],t=0;t<localStorage.length;t++)e.push(localStorage.key(t));e.forEach(function(e){var t=lsloader.getLS(e);t&&-1===t.indexOf(versionString)&&lsloader.removeLS(e)})}catch(e){}},lsloader.clean(),lsloader.load=function(e,t,s){var n;if(s=s||function(){},(n=this.getLS(e))&&-1===n.indexOf(versionString))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split(versionString)[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split(versionString)[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(t,s,e){var n=this;/\.js?.+$/.test(s)?this.iojs(s,t,function(e,t,s){n.setLS(t,e+versionString+s),n.runjs(e,t,s)}):/\.css?.+$/.test(s)&&this.iocss(s,t,function(e){document.getElementById(t).appendChild(document.createTextNode(e)),n.setLS(t,s+versionString+e)},e)},lsloader.iojs=function(t,s,e){var n=this;n.jsRunSequence.push({name:s,code:""});try{var a=new XMLHttpRequest;a.open("get",t,!0),a.onreadystatechange=function(){if(4==a.readyState){if((200<=a.status&&a.status<300||304==a.status)&&""!=a.response)return void e(t,s,a.response);n.jsfallback(t,s)}},a.send(null)}catch(e){n.jsfallback(t,s)}},lsloader.iocss=function(t,s,e,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",t,!0),u.onreadystatechange=function(){if(4==u.readyState){if((200<=u.status&&u.status<300||304==u.status)&&""!=u.response)return e(u.response),void n();a.cssfallback(t,s,n)}},u.send(null)}catch(e){a.cssfallback(t,s,n)}},lsloader.iofonts=function(t,s,e,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",t,!0),u.onreadystatechange=function(){if(4==u.readyState){if((200<=u.status&&u.status<300||304==u.status)&&""!=u.response)return e(u.response),void n();a.cssfallback(t,s,n)}},u.send(null)}catch(e){a.cssfallback(t,s,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status)(a=document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),0<this.jsRunSequence.length&&this.runjs();else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var a,u=this;(a=document.createElement("script")).src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),0<u.jsRunSequence.length&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){for(var s in this.jsnamemap[t]=t,this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(e){var t="",s={};for(var n in e){var a=this.getLS(e[n].name);if(a)var u=a.split(versionString)[0],i=a.split(versionString)[1];else u="";u==e[n].path?this.jsRunSequence.push({name:e[n].name,code:i,path:e[n].path}):(this.jsRunSequence.push({name:e[n].name,code:null,path:e[n].path,status:"comboloading"}),s[e[n].name]=!0,t+=(""==t?"":";")+e[n].path)}var o=this;if(t){var r=new XMLHttpRequest;r.open("get",combo+t,!0),r.onreadystatechange=function(){if(4==r.readyState)if(200<=r.status&&r.status<300||304==r.status){if(""!=r.response)return void o.runCombo(r.response,s)}else{for(var e in o.jsRunSequence)s[o.jsRunSequence[e].name]&&(o.jsRunSequence[e].status="failed");o.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){for(var s in(e=e.split("/*combojs*/")).shift(),this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+versionString+e[0]),e.shift());this.runjs()}</script><style id="css/material.min.css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")})</script><style id="css/style.min.css"></style><script>void 0===window.lsLoadCSSMaxNums&&(window.lsLoadCSSMaxNums=0),window.lsLoadCSSMaxNums++,lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){void 0===window.lsLoadCSSNums&&(window.lsLoadCSSNums=0),window.lsLoadCSSNums++,window.lsLoadCSSNums==window.lsLoadCSSMaxNums&&(document.documentElement.style.display="")})</script><style></style><style>body,html{font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif}a{color:#00838f}#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media{background-color:#436eee!important}#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover{color:#436eee!important}#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover{color:#436eee!important}.toTop{background:#757575!important}.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a{color:#757575}#scheme-Paradox .MD-burger-layer{background-color:#757575}#scheme-Paradox #post-toc-trigger-btn{color:#757575}.post-toc a:hover{color:#00838f;text-decoration:underline}</style><style>body{background-image:url(/img/daily_pic.png)}</style><style>.fade{transition:all .8s linear;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.fade.out{opacity:0}</style><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script><script>function Queue(){this.dataStore=[],this.offer=function(e){this.debug&&console.log("Offered a Queued Function.");"function"==typeof e?this.dataStore.push(e):console.log("You must offer a function.")},this.poll=function(){this.debug&&console.log("Polled a Queued Function.");return this.dataStore.shift()},this.execNext=function(){var e=this.poll();void 0!==e&&(this.debug&&console.log("Run a Queued Function."),e())},this.debug=!1,this.startDebug=function(){this.debug=!0}}var queue=new Queue</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?fa0f0fbf3cb031fb6c0fdd33e113a864";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body id="scheme-Paradox" class="lazy"><div class="material-layout mdl-js-layout has-drawer is-upgraded"><main class="material-layout__content" id="main"><div id="top"></div> <button class="MD-burger-icon sidebar-toggle"><span class="MD-burger-layer"></span></button> <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon"> <i class="material-icons">format_list_numbered</i></button><ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh;overflow-y:scroll"><ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是-CMake"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是 CMake</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何编写-CMakeLists-txt文件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">如何编写 CMakeLists.txt文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一个简单的例子"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">一个简单的例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多个目录及源文件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">多个目录及源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#gdb-相关设置"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">gdb 相关设置</span></a></li></ol></li></ol></li></ol></ul><div class="material-post_container"><div class="material-post mdl-grid"><div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"><div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50"><script type="text/ls-javascript" id="post-thumbnail-script">
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #436EEE !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #436EEE !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #436EEE !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/daily_pic.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?fa0f0fbf3cb031fb6c0fdd33e113a864';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism-xonokai.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CMake"><span class="post-toc-number">1.</span> <span class="post-toc-text">CMake</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是-CMake"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是 CMake</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何编写-CMakeLists-txt文件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">如何编写 CMakeLists.txt文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一个简单的例子"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">一个简单的例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多个目录及源文件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">多个目录及源文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#gdb-相关设置"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">gdb 相关设置</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
     $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-</script><p class="article-headline-p"> CMake简介</p></div><div class="mdl-color-text--grey-700 mdl-card__supporting-text meta"><div id="author-avatar"> <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"></div><div> <strong>sunT</strong> <span>5月 13, 2018</span></div><div class="section-spacer"></div> <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">devices other</i> <span class="visuallyhidden">devices other</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button"><li class="mdl-menu__item">在其它设备中阅读本文章</li> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXUlEQVR42u3aQXLCMAwFUO5/6fYALeVLckTovKwyTAh+XtjmS4+vf3098PDw8PDw8PDwbsZ7xNcvL/rx+c/nT70tHxseHh7eDu/FUhswkgEl7392XxgbHh4e3iLv2YCePZN8K0cm7L/HhoeHh3dnXnKfHKCrv4WHh4f36bzkeJ0/g4eHh/eJvGpYUD1SJ7/75qwFDw8PL+blRab9+9X6Hh4eHl7AK7c0xQt6b1k/3HSFh4eHdwEvX4iviDAuaUTAw8PDW+FV20nzyCBvJqiCR2EEHh4e3pjXA5cD1taxu/pdPDw8vE1eNUSoxrJ5OFvdVPDw8PA2edWh5xPRPBDHrQnNlBoPDw/vEC9vikompRdtVBuzCq0DeHh4eEd5vcam6k/+vTEksUUeH+Ph4eHt8PICVQ8wmYjqpoWHh4e3wxu97ig4mfQXfwbw8PDwFnnV42zetNo7Rudvw8PDw9vk5RFtD18tlU2aWfHw8PA2eb3FOj/sTpoGqlOGh4eHt8PLS/WTjaRaeOuNAQ8PD+9qXm/oySB6cXBvu8LDw8Pb5/UW997SXw2Iy20HeHh4eIu8SctUtcSVPJkXz/Dw8PDexasuwadC2zwsjqYGDw8P72Jer40gD2GrRazqER8PDw9vn1cdbh5PTJoDRoEFHh4e3gqv1wqQbwm9eDeZiOY/Bjw8PLxDvGqxKp+gSUxcjXTx8PDw7s/LF/1JY0G+keDh4eHdmTfBnN0M8PDw8N7FS8KISVA7aQ4obE54eHh4K7xJK8Ck8J9PWSHwxcPDw7uY9/8uPDw8PDw8PDy8G1zfTdzEcEPvbNcAAAAASUVORK5CYII="></ul> <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">bookmark</i> <span class="visuallyhidden">bookmark</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button"><li class="mdl-menu__item"> <a class="post_tag-link" href="/tags/cmake/">cmake</a></li></ul> <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"> <i class="material-icons" role="presentation">share</i> <span class="visuallyhidden">share</span></button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button"><a class="post_share-link" href="#"><li class="mdl-menu__item"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> &nbsp;浏览量</span></li></a><a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake简介&url=http://www.stblog.top/archives/aac1e10b.html&pic=&searchPic=false&style=simple" target="_blank"><li class="mdl-menu__item"> 分享到微博</li></a><a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake简介&url=http://www.stblog.top/archives/aac1e10b.html&via=sunT" target="_blank"><li class="mdl-menu__item"> 分享到 Twitter</li></a><a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.stblog.top/archives/aac1e10b.html" target="_blank"><li class="mdl-menu__item"> 分享到 Facebook</li></a></ul></div><div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><h2 id="什么是-CMake"><a href="#什么是-CMake" class="headerlink" title="什么是 CMake"></a>什么是 CMake</h2><p>由于存在各种各样不同的平台，所以就产生了各种各样的 makefile 文件。当我们想使软件可以跨平台，那么我们不得不对每个平台编写一个 Makefile。</p><p>这时候 cmake 就应运而生，它允许开发者只编写一个名为 CMakelists.txt的文件，就可以执行 cmake 后自动生成对应平台的 Makefile 文件。</p><p>执行起来也非常简单，只需要 cmake PATH 即可，其中 PATH 就是 CMakeLists.txt 的路径。</p><h2 id="如何编写-CMakeLists-txt文件"><a href="#如何编写-CMakeLists-txt文件" class="headerlink" title="如何编写 CMakeLists.txt文件"></a>如何编写 CMakeLists.txt文件</h2><p>有上述可知，编写 CMakeLists.txt 成了使用 cmake 的关键。</p><h3 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h3><pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本的要求
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                CMake简介
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>sunT</strong>
+        <span>5月 13, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXUlEQVR42u3aQXLCMAwFUO5/6fYALeVLckTovKwyTAh+XtjmS4+vf3098PDw8PDw8PDwbsZ7xNcvL/rx+c/nT70tHxseHh7eDu/FUhswkgEl7392XxgbHh4e3iLv2YCePZN8K0cm7L/HhoeHh3dnXnKfHKCrv4WHh4f36bzkeJ0/g4eHh/eJvGpYUD1SJ7/75qwFDw8PL+blRab9+9X6Hh4eHl7AK7c0xQt6b1k/3HSFh4eHdwEvX4iviDAuaUTAw8PDW+FV20nzyCBvJqiCR2EEHh4e3pjXA5cD1taxu/pdPDw8vE1eNUSoxrJ5OFvdVPDw8PA2edWh5xPRPBDHrQnNlBoPDw/vEC9vikompRdtVBuzCq0DeHh4eEd5vcam6k/+vTEksUUeH+Ph4eHt8PICVQ8wmYjqpoWHh4e3wxu97ig4mfQXfwbw8PDwFnnV42zetNo7Rudvw8PDw9vk5RFtD18tlU2aWfHw8PA2eb3FOj/sTpoGqlOGh4eHt8PLS/WTjaRaeOuNAQ8PD+9qXm/oySB6cXBvu8LDw8Pb5/UW997SXw2Iy20HeHh4eIu8SctUtcSVPJkXz/Dw8PDexasuwadC2zwsjqYGDw8P72Jer40gD2GrRazqER8PDw9vn1cdbh5PTJoDRoEFHh4e3gqv1wqQbwm9eDeZiOY/Bjw8PLxDvGqxKp+gSUxcjXTx8PDw7s/LF/1JY0G+keDh4eHdmTfBnN0M8PDw8N7FS8KISVA7aQ4obE54eHh4K7xJK8Ck8J9PWSHwxcPDw7uY9/8uPDw8PDw8PDy8G1zfTdzEcEPvbNcAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/cmake/">cmake</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CMake简介&url=http://www.stblog.top/archives/aac1e10b.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CMake简介&url=http://www.stblog.top/archives/aac1e10b.html&via=sunT" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://www.stblog.top/archives/aac1e10b.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><h2 id="什么是-CMake"><a href="#什么是-CMake" class="headerlink" title="什么是 CMake"></a>什么是 CMake</h2><p>由于存在各种各样不同的平台，所以就产生了各种各样的 makefile 文件。当我们想使软件可以跨平台，那么我们不得不对每个平台编写一个 Makefile。</p>
+<p>这时候 cmake 就应运而生，它允许开发者只编写一个名为 CMakelists.txt的文件，就可以执行 cmake 后自动生成对应平台的 Makefile 文件。</p>
+<p>执行起来也非常简单，只需要 cmake PATH 即可，其中 PATH 就是 CMakeLists.txt 的路径。</p>
+<h2 id="如何编写-CMakeLists-txt文件"><a href="#如何编写-CMakeLists-txt文件" class="headerlink" title="如何编写 CMakeLists.txt文件"></a>如何编写 CMakeLists.txt文件</h2><p>有上述可知，编写 CMakeLists.txt 成了使用 cmake 的关键。</p>
+<h3 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h3><pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本的要求
 cmake_minimum_required (VERSION 2.8)
 
 #项目信息
@@ -39,7 +506,11 @@ project(Demo)
 
 #指定生成的目标
 add_executable(Demo main.c)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>#号是用来注释的。</p><h3 id="多个目录及源文件"><a href="#多个目录及源文件" class="headerlink" title="多个目录及源文件"></a>多个目录及源文件</h3><p>我们在实际的生产环境中一般都是有多个目录和源文件的项目。所以如何利用 CMakeLists.txt 来构建整个项目才是学习的重点。</p><p>假如我们的项目目前有main.c、libfunc.c、libfunc.h三个文件。那么我们的 CMakeLists.txt 就可以这么写。</p><pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>#号是用来注释的。</p>
+<h3 id="多个目录及源文件"><a href="#多个目录及源文件" class="headerlink" title="多个目录及源文件"></a>多个目录及源文件</h3><p>我们在实际的生产环境中一般都是有多个目录和源文件的项目。所以如何利用 CMakeLists.txt 来构建整个项目才是学习的重点。</p>
+<p>假如我们的项目目前有main.c、libfunc.c、libfunc.h三个文件。那么我们的 CMakeLists.txt 就可以这么写。</p>
+<pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
 cmake_minimum_required (VERSION 2.8)
 
 #项目信息
@@ -47,7 +518,9 @@ project (Demo2)
 
 #指定生成目标
 add_executable(Demo main.c libfunc.c)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>如上我们只是在生成目标时，将 libfunc.c 加入而已。那么当我们有很多源文件那么一条一条的加入一定不是一个明智的做法。幸好我可以使用<code>aux_source_directory(&lt;dir&gt; &lt;variable&gt;)</code>来定义一个需要加入源文件的目录，所以我们可以将上面的 CMakeLists.txt 修改为。</p><pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如上我们只是在生成目标时，将 libfunc.c 加入而已。那么当我们有很多源文件那么一条一条的加入一定不是一个明智的做法。幸好我可以使用<code>aux_source_directory(&lt;dir&gt; &lt;variable&gt;)</code>来定义一个需要加入源文件的目录，所以我们可以将上面的 CMakeLists.txt 修改为。</p>
+<pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
 cmake_minimum_required (VERSION 2.8)
 #项目信息
 project (Demo2)
@@ -55,7 +528,11 @@ project (Demo2)
 aux_source_directory(. DIR_SRCS)
 #指定生成目标
 add_executable(Demo ${DIR_SRCS})
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>利用了 aux_source_directory 来定义了一个名为DIR_SRCS的变量，他的值为’.’。这样在生成目标的时候就可以不当前目录的所有源文件包含。</p><p>如果我们的目录结构是 main.c 在根目录，而函数库定义的源文件libfunc.c 在 lib 目录下那又该如何编写 CMakeLists.txt 呢？<br>这时就该为每个目录编写一个 CMakeLists.txt 了。</p><p>所以首先根目录的CMakeLists.txt：</p><pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>利用了 aux_source_directory 来定义了一个名为DIR_SRCS的变量，他的值为’.’。这样在生成目标的时候就可以不当前目录的所有源文件包含。</p>
+<p>如果我们的目录结构是 main.c 在根目录，而函数库定义的源文件libfunc.c 在 lib 目录下那又该如何编写 CMakeLists.txt 呢？<br>这时就该为每个目录编写一个 CMakeLists.txt 了。</p>
+<p>所以首先根目录的CMakeLists.txt：</p>
+<pre class="line-numbers language-CMake"><code class="language-CMake">#CMake 最低版本号要求
 cmake_minimum_required (VERSION 2.8)
 #项目信息
 project (Demo3)
@@ -67,33 +544,358 @@ add_subdirectory(lib)
 add_executable(Demo main.cc)
 #添加链接库
 target_link_libraries(Demo lib)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>我们看到了添加 lib 子目录add_subdirectory(lib)的命令。<br>然后就是 target_link_libraries（Demo lib）将 lib 库链接到最终生成的目标中。</p><p>接下来我们在就可以在 lib 目录下编写CMakeLists.txt 了。</p><pre><code>#创建 DIR_LIB_SRCS 变量
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们看到了添加 lib 子目录add_subdirectory(lib)的命令。<br>然后就是 target_link_libraries（Demo lib）将 lib 库链接到最终生成的目标中。</p>
+<p>接下来我们在就可以在 lib 目录下编写CMakeLists.txt 了。</p>
+<pre><code>#创建 DIR_LIB_SRCS 变量
 aux_source_directory(. DIR_LIB_SRCS)
 #生成链接库
 add_library ( lib ${DIR_LIB_SRCS})
-</code></pre><p>可以看到的是我们使用了 add_library 将lib 生成静态链接库。</p><p>掌握上述的知识点基本上就可以满足一般的需求了。但是 cmake 还是提供了一些更自由的方式。</p><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>设置版本号</p><pre><code>set (Tutorial_VERSION_MAJOR 1)
+</code></pre><p>可以看到的是我们使用了 add_library 将lib 生成静态链接库。</p>
+<p>掌握上述的知识点基本上就可以满足一般的需求了。但是 cmake 还是提供了一些更自由的方式。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>设置版本号</p>
+<pre><code>set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 
 configure_file(
                                 &quot;${PROJECT_SOURCE_DIR}/Config.h.in&quot;
                                 &quot;${PROJECT_SOURCE_DIR}/Config.h&quot;
                                 )
-</code></pre><p>在 Config.h.in 中定义：<br>在 Config.h.in 中定义：</p><pre class="line-numbers language-c++"><code class="language-c++">#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
+</code></pre><p>在 Config.h.in 中定义：<br>在 Config.h.in 中定义：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
 #define Tutorial_VERSION_MINOR @ Tutorial_VERSION_MINOR@
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这样 cmake 就会自动生成一个 Config.h 文件。<br>但是需要将 Config.h包含在要使用版本号的地方。然后就可以在源代码中使用Tutorial_VERSION_MAJOR和Tutorial_VERSION_MINOR了。</p><p>还可使用 <code>include_directories(...)</code>指定头文件目录。</p><p>设置选项：</p><pre><code>option(USE_MYLIB
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样 cmake 就会自动生成一个 Config.h 文件。<br>但是需要将 Config.h包含在要使用版本号的地方。然后就可以在源代码中使用Tutorial_VERSION_MAJOR和Tutorial_VERSION_MINOR了。</p>
+<p>还可使用 <code>include_directories(...)</code>指定头文件目录。</p>
+<p>设置选项：</p>
+<pre><code>option(USE_MYLIB
                 &quot;Use my own lib function&quot; ON)
 if (USE_MYLIB)
   include_directories (&quot;${PROJECT_SOURCE_DIR}/lib&quot;)
   add_subdirectory (lib)
   set (EXTRA_LIBS ${EXTRA_LIBS} lib)
 endif (USE_MYLIB)
-</code></pre><p>在源代码中添加：</p><pre><code>#ifdef USE_MYLIB
+</code></pre><p>在源代码中添加：</p>
+<pre><code>#ifdef USE_MYLIB
   #include &quot;lib/libfunc.h&quot;
 #else
 </code></pre><h3 id="gdb-相关设置"><a href="#gdb-相关设置" class="headerlink" title="gdb 相关设置"></a>gdb 相关设置</h3><pre><code>set(CMAKE_BUILD_TYPE &quot;Debug&quot;)
 set(CMAKE_CXX_FLAGS_DEBUG &quot;$ENV{CXXFLAGS} -O0 -Wall -g -ggdb&quot;)
 set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
-</code></pre><p>cmake 能做的还有很多诸如安装、测试、打包等操作。而且可以在 cmake 中定义函数和宏定义。你可以在<a href="https://cmake.org/" target="_blank" rel="external">cmake 官方网站</a>学习更多。</p></div></div><nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col"> <a href="/archives/e0e8ca7f.html" id="post_nav-newer" class="prev-content"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_back</i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新篇</a><div class="section-spacer"></div> <a href="/archives/6adcba8e.html" id="post_nav-older" class="next-content">旧篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"> <i class="material-icons">arrow_forward</i></button></a></nav></div></div><div class="sidebar-overlay"></div><aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation"><div id="sidebar-main"><div class="sidebar-header header-cover" style="background-image:url(/img/head.png)"><div class="top-bar"></div> <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display:initial" data-upgraded=",MaterialButton,MaterialRipple"> <i class="material-icons">clear_all</i><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button><div class="sidebar-image"> <img src="/img/avatar.png" alt="sunT's avatar"></div> <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">suntian0@gmail.com<b class="caret"></b></a></div><ul class="nav sidebar-nav"><li class="dropdown"><ul id="settings-dropdown" class="dropdown-menu"><li> <a href="mailto:suntian0@gmail.com" target="_blank" title="Email Me"><i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i> Email Me</a></li></ul></li><li id="sidebar-first-li"> <a href="/"><i class="material-icons sidebar-material-icons">home</i> 主页</a></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">inbox</i> 归档<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li></ul></li><li class="dropdown"> <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown"><i class="material-icons sidebar-material-icons">chrome_reader_mode</i> 分类<b class="caret"></b></a><ul class="dropdown-menu"><li> <a class="sidebar_archives-link" href="/categories/经典算法/">经典算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程实用技术/">编程实用技术<span class="sidebar_archives-count">2</span></a></li></ul></li><li> <a href="/tags" title="tagcloud"><i class="material-icons sidebar-material-icons">cloud</i> tagcloud</a></li><li> <a href="/timeline" title="timeline"><i class="material-icons sidebar-material-icons">access_time</i> timeline</a></li><li> <a href="/archives">文章总数 <span class="sidebar-badge">3</span></a></li></ul></div></aside><div id="back-to-top" class="toTop-wrap"> <a href="#top" class="toTop"><i class="material-icons footer_top-i">expand_less</i></a></div><footer class="mdl-mini-footer" id="bottom"><div class="mdl-mini-footer--left-section sns-list"></div><div id="copyright"> Copyright&nbsp;©<script type="text/javascript">var fd=new Date;document.write("&nbsp;"+fd.getFullYear()+"&nbsp;")</script>sun'blog</div><div class="mdl-mini-footer--right-section"><div><div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div><div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div></div></div></footer><script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script><script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script><script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script><script type="text/ls-javascript" id="NProgress-script">
+</code></pre><p>cmake 能做的还有很多诸如安装、测试、打包等操作。而且可以在 cmake 中定义函数和宏定义。你可以在<a href="https://cmake.org/" target="_blank" rel="external">cmake 官方网站</a>学习更多。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/archives/e0e8ca7f.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/archives/6adcba8e.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/head.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="sunT's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        suntian0@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:suntian0@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/c-c/">c/c++<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/经典算法/">经典算法<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程实用技术/">编程实用技术<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="tagcloud">
+                
+                    <i class="material-icons sidebar-material-icons">cloud</i>
+                
+                tagcloud
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="timeline">
+                
+                    <i class="material-icons sidebar-material-icons">access_time</i>
+                
+                timeline
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">4</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>sun'blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
     NProgress.configure({
         showSpinner: true
     });
@@ -112,12 +914,43 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
         NProgress.done();
         $('.fade').removeClass('out');
     }, 800);
-</script><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var agent=navigator.userAgent.toLowerCase();0<agent.indexOf("ucbrowser")&&(document.write('<link rel="stylesheet" href="/css/uc.css">'),alert("由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。"))</script><script type="text/ls-javascript" id="window-load">
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
     $(window).on('load', function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
-</script><script type="text/ls-javascript" id="lazy-load">
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
     // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
@@ -131,4 +964,25 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
             queue.execNext();
         },200);
     });
-</script><script>!function(){for(var e=document.querySelectorAll('script[type="text/ls-javascript"]'),r=0;r<e.length;++r){var o=e[r];lsloader.runInlineScript(o.id,o.id)}}(),console.log("\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;","color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;")</script></main></div></body></html>
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
