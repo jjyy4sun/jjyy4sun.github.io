@@ -252,14 +252,14 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
   
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[timeline]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[timeline]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
