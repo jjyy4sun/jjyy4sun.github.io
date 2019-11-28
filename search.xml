@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title><![CDATA[杨辉三角打印队列实现]]></title>
+      <url>/archives/cf460c9e.html</url>
+      <content type="html"><![CDATA[<pre><code>void printYanghui(int n){
+    std::queue&lt;int&gt; q;
+    for (int i = 1; i &lt;= n; i++)
+    {
+        int m,s;
+        q.push(0);//为了计算末尾的1
+        for (int k = 1; k &lt;= i; ++k)
+        {
+            if(1==k){
+                m = 1;//第一个数都是1，所以不用入队列
+            }
+            s = q.front();
+            q.pop();
+            q.push(m + s);
+
+            std::cout &lt;&lt; m &lt;&lt; &quot; &quot;;
+            m = s;
+
+        }
+
+        std::cout &lt;&lt; std::endl;
+    }
+}
+</code></pre>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[随机数]]></title>
       <url>/archives/7c9eec8d.html</url>
       <content type="html"><![CDATA[<h1 id="如何在c-产生随机数"><a href="#如何在c-产生随机数" class="headerlink" title="如何在c++产生随机数"></a>如何在c++产生随机数</h1><p>在 c++中要实现随机数生成，我们要使用 rand()和srand()两个函数来完成。但是rand()是用<a href="https://baike.baidu.com/item/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/5544515?fr=aladdin" target="_blank" rel="external">线性同余法</a>实现的，所以产生的不是真正的随机数。</p>

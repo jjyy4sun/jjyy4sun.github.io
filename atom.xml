@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.stblog.top/"/>
-  <updated>2018-08-09T14:35:20.000Z</updated>
+  <updated>2019-11-28T13:48:31.000Z</updated>
   <id>http://www.stblog.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>杨辉三角打印队列实现</title>
+    <link href="http://www.stblog.top/archives/cf460c9e.html"/>
+    <id>http://www.stblog.top/archives/cf460c9e.html</id>
+    <published>2019-11-28T13:43:13.000Z</published>
+    <updated>2019-11-28T13:48:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;void printYanghui(int n){
+    std::queue&amp;lt;int&amp;gt; q;
+    for (int i = 1; i &amp;lt;= n; i++)
+    {
+        int m,s;
+       
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>随机数</title>
