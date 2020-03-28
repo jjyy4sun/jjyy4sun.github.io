@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.stblog.top/"/>
-  <updated>2019-11-28T14:15:50.000Z</updated>
+  <updated>2020-03-28T12:53:56.000Z</updated>
   <id>http://www.stblog.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>游戏引擎概述</title>
+    <link href="http://www.stblog.top/archives/67e448db.html"/>
+    <id>http://www.stblog.top/archives/67e448db.html</id>
+    <published>2020-03-28T12:24:31.000Z</published>
+    <updated>2020-03-28T12:53:56.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本人一直对游戏引擎很感兴趣，而且现在入职的公司是做gpu，所以趁此机会系统的学习一下游戏引擎的知识。&lt;/p&gt;
+&lt;p&gt;本篇是提炼了一下概念，制作了一个思维导图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/gameEngine.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="游戏引擎" scheme="http://www.stblog.top/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    
+      <category term="游戏引擎" scheme="http://www.stblog.top/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>杨辉三角打印队列实现</title>

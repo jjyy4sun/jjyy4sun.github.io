@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[游戏引擎概述]]></title>
+      <url>/archives/67e448db.html</url>
+      <content type="html"><![CDATA[<p>本人一直对游戏引擎很感兴趣，而且现在入职的公司是做gpu，所以趁此机会系统的学习一下游戏引擎的知识。</p>
+<p>本篇是提炼了一下概念，制作了一个思维导图：</p>
+<p><img src="/img/gameEngine.png" alt="pic"></p>
+<p>接下来的几篇博文将逐一细致的谈论上述图片提及的知识点。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 游戏引擎 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 游戏引擎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[杨辉三角打印队列实现]]></title>
       <url>/archives/cf460c9e.html</url>
       <content type="html"><![CDATA[<pre><code>void printYanghui(int n){
@@ -294,14 +318,14 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
   
     
     <entry>
-      <title><![CDATA[timeline]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[timeline]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
