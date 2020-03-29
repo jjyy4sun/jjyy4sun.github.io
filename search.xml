@@ -3,6 +3,276 @@
   
     
     <entry>
+      <title><![CDATA[markdown语法]]></title>
+      <url>/archives/f134a8e5.html</url>
+      <content type="html"><![CDATA[<h1 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h1><h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>一个Markdown段落是有一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的。便视为空行。比如空格和制表符都会被视为空行）。普通段落不该用空格或制表符来缩进。<br>有一个或多个连续的文本行组成这句话其实暗示了Markdown允许段落内的强迫换行（插入换行符），这个特性和其他大部分的text-to-HTML格式不一样。其他格式会把每个换行符都转换成<code>&lt;br /&gt;</code>标签。<br>如果你确实想用Markdown来擦如<code>&lt;br /&gt;</code>标签的话，在插入处按入俩个以上的空格然后回回车。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown支持两种标题的语法，类<strong>Setext</strong>和<strong>atx</strong>形式。<br>累Setext形式是用底线的形式，利用<code>=</code>（最高阶标题）<code>-</code>（第二阶标题），例如：</p>
+<pre class="line-numbers language-lizi"><code class="language-lizi">This is an H1
+==========
+This is an H2
+-------------------
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>任何数量的<code>=</code>和<code>-</code>都是可以有效果的。<br>类Atx形式则是是在行首插入1个到6个<code>#</code>，对应到标题1到6阶，例如：</p>
+<pre class="line-numbers language-lizi"><code class="language-lizi"># 这是H1
+##这是H2
+######这是H6
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>你也可以选择性地闭合类atx样式的标题。这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上<code>#</code>，而行尾的数量也不用和行首的数量一样。</p>
+<pre class="line-numbers language-lizi"><code class="language-lizi"># 这是H1#
+##这是H2####
+######这是H6######
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h2><p>Markdown标记区块引用是使用类似email中用<code>&gt;</code>的引用方式。如果你还熟悉在email信件中的引言部分，你就知道怎么在Markdown文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行最前面加上<code>&gt;</code>：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+ > consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. 
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. 
+> 
+ > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse 
+> id sem consectetuer libero luctus adipiscing.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Markdown也允许你偷懒只在整个段落的第一行最前面加上<code>&gt;</code>：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus. 
+ > Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>区块医用可以嵌套，只需根据层次加上不同数量的<code>&gt;</code>：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">> This is the first level of quoting. 
+>
+ > > This is nested blockquote. 
+> 
+> Back to the first level.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>This is the first level of quoting. </p>
+<blockquote>
+<p>This is nested blockquote. </p>
+</blockquote>
+<p>Back to the first level.<br>引用的区块内也可以使用其他的Markdown语法，包括标题，列表，代码区块等：</p>
+</blockquote>
+<pre class="line-numbers language-例子"><code class="language-例子">> ## 这是一个标题。 
+> 
+ > 1.   这是第一行列表项。 
+> 2.   这是第二行列表项。 
+>
+ > 给出一些例子代码： 
+> 
+ >    return shell_exec("echo $input | $markdown_script");
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<h2 id="这是一个标题。"><a href="#这是一个标题。" class="headerlink" title="这是一个标题。"></a>这是一个标题。</h2><ol>
+<li>这是第一行列表项。 </li>
+<li>这是第二行列表项。 </li>
+</ol>
+<p>给出一些例子代码： </p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
+</code></pre><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>Markdown支持有序列表和无需列表<br>无序列表使用星号和加号或是减号作为列表标记：</p>
+</blockquote>
+<pre class="line-numbers language-lizi"><code class="language-lizi">* Red
+* Green
+* Blue
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>效果如下：</p>
+<ul>
+<li>Red</li>
+<li>Green</li>
+<li>Blue<br>等同于：</li>
+</ul>
+<pre class="line-numbers language-lizi"><code class="language-lizi">+ Red
++ Green
++ Blue
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-lizi"><code class="language-lizi">- Red
+- Green
+- Blue
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>有序列表则使用数字接着一个英文句点：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">1. Bird
+2. McHale
+3. Parish
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish<br>很重要的一点是，你在列表标记上使用的数字并不影响输出的HTML。<br>如果你表列表写成：</li>
+</ol>
+<pre class="line-numbers language-例子"><code class="language-例子">1. Bird
+1. McHale
+1. Parish
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-例子"><code class="language-例子">15. Bird
+2. McHale
+9. Parish
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>都是可以的。<br>列表项目标记通常是放在最左边，但是其实也是可以缩进，最多3个空格，项目标记后面则一定要接至少一个空格或是制表符。<br>列表项目可以包涵多个哦，每个项目下的段落都必须缩进4个空格或是1个制表符：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">1.  This is a list item with two paragraphs. Lorem ipsum dolor    sit amet, consectetuer                 adipiscing elit. Aliquam hendrerit    mi posuere lectus.      
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum    sit amet velit. 
+ 2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>效果如下：</p>
+<ol>
+<li>This is a list item with two paragraphs. Lorem ipsum dolor    sit amet, consectetuer                                  adipiscing elit. Aliquam hendrerit    mi posuere lectus.<br> Vestibulum enim wisi, viverra nec, fringilla in, laoreet    vitae, risus. Donec sit                             ametnisl. Aliquam semper ipsum sit amet velit. </li>
+<li>Suspendisse id sem consectetuer libero luctus adipiscing.</li>
+</ol>
+<p>如果要在列表项目内放进引用，那<code>&gt;</code>就需要缩进：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">* A list item with a blockquote:
+    > This is a blockquote
+    > inside a list item.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>效果如下:</p>
+<ul>
+<li>A list item with a blockquote:<blockquote>
+<p>This is a blockquote<br>inside a list item.</p>
+</blockquote>
+</li>
+</ul>
+<p>如果要放如代码区块的话，该区块就需要缩进两次，也就是8个空格或是2个制表符：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">* 一列表项包含一个列表区块：
+        <代码写在这>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>效果如下：</p>
+<ul>
+<li><p>一列表项包含一个列表区块：</p>
+<pre><code>     &lt;代码写在这&gt;
+</code></pre></li>
+</ul>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们不希望它以一般的方式去排版，而是原来的样子显示，Markdown会用<code>&lt;pre&gt;</code>和<code>&lt;code&gt;</code>标签吧代码区块抱起来<br>要在Markdown中家里代码区块很简单，只要简单地4个空格或是1个制表符就可以了：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">这是一个普通段落：
+    这是一个代码区块。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>效果如下：<br>这是一个普通区块：</p>
+<pre><code>printf(&quot;Hello world!&quot;);
+return 0;
+</code></pre><p>一个代码块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>你可以在一行中用三个以上的星号，减号，底线来建立一个分割线，行内不能有其他东西，你也可以在星号或是建好中间插入空格。</p>
+<pre class="line-numbers language-例子"><code class="language-例子">***
+* * *
+*****
+- - -
+___________
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果如下图：</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h1><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown支持两种形式的链接语法：<strong>行内式</strong>和<strong>参考式</strong>两种形式。<br>不管是哪一种，链接文字都是用[方括号]来标记。<br>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入为你只链接即可，如果你还想要加上链接的title文字，只要在万只后面，用引号把title文字包起来即可。例如：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">This is [an example](http://example.com "Tiltle" ) inline link.
+[This Link](http://example.net ) has no title attribute.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>效果如下：<br>This is <a href="http://example.com" title="Tiltle" target="_blank" rel="external">an example</a> inline link.<br><a href="http://example.net" target="_blank" rel="external">This Link</a> has no title attribute.<br>如果你是要链接到同样的主机的资源，你可以使用相对路径：</p>
+<pre class="line-numbers language-lizi"><code class="language-lizi">See my [About](/about/) page for details.
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>效果如下：<br>See my <a href="/about/">About</a> page for details.</p>
+<p>参考式的链接实在连接文字的括号后面接上另一个方括号，而在的二个方括号里面填入用以便是链接的标记：</p>
+<pre class="line-numbers language-lizi"><code class="language-lizi">This is [an example][id] reference-style link.
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>接着在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">[id]: http://example.com/ "Title"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>效果如下：<br>This is <a href="url/to/image" title="title">an example</a> reference-style link.</p>
+<p>链接内容定义的形式为：</p>
+<ul>
+<li>方括号（前面可以选择性的加上之多三个空格来缩进），里面输入链接文字</li>
+<li>接着一个冒号</li>
+<li>接着一个以上的空格或是制表符</li>
+<li>接着链接的网址</li>
+<li>选择性地接着title内容<br>下面这三种链接的定义都是相同的(但是单引号已经不被支持)：</li>
+</ul>
+<pre class="line-numbers language-例子"><code class="language-例子">[foo]: http://example.com/  "Optional Title Here"
+[foo]: http://example.com/  'Optional Title Here'
+[foo]: http://example.com/  (Optional Title Here)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>链接网址也可以用方括号抱起来：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">[id]: <http://example.com/>  "Optional Title Here"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>你也可以把title熟悉放到下一行，也可以加一些缩进：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">[id]: http://example.com/longish/path/to/resource/here
+    "Optional Title Here"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>链接辨识标识可以有字母，数字，空白，标点符号，但是并不区分大小写。<br>隐式链接标识功能：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">[google][]
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后定义链接内容：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">[google]: http://google.com/
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a href="http://google.com/" target="_blank" rel="external">google</a></p>
+<p>下面是一个参考式链接的范例：</p>
+<pre class="line-numbers language-例子"><code class="language-例子">I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        "Google"
+  [2]: http://search.yahoo.com/  "Yahoo Search"
+  [3]: http://search.msn.com/    "MSN Search"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown使用星号（<code>*</code>）和（<code>_</code>）作为标记强调字词的符号，被<code>*</code>或是<code>_</code>包围会被转成用<code>&lt;em&gt;</code>标签包围（即为斜体）。用两个包围会被转化为<code>&lt;strong&gt;</code>（即为粗体），三个的话就会变成斜粗体例如：</p>
+<pre><code>*Single*
+**doube**
+***trible***
+_single_
+__double__
+___trible___
+</code></pre><p>效果如下：<br><em>Single</em><br><strong>doube</strong><br><strong><em>trible</em></strong><br><em>single</em><br><strong>double</strong><br><strong><em>trible</em></strong><br>如果你的* 和_两边都有空白的话，他们会被当成普通符号处理。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果哟啊标记一小段行内代码，你可以用反引号把它包起来（<code>` </code>），例如:</p>
+<pre><code>Use the `printf()`function.
+</code></pre><p>效果：<br>Use the <code>printf()</code>function.<br><code>`foo` </code></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>图片和链接相似也有两种形式来书写：<strong>行内式</strong>和<strong>参考式</strong><br>行内式：</p>
+<pre><code>![Alt Text](/path/to/img.jpg)
+![Alt Text](/path/to/img.ipg &quot;title&quot;)
+</code></pre><p>效果：<br><img src="/path/to/img.jpg" alt="Alt Text"><br><img src="/path/to/img.ipg" alt="Alt Text" title="title"><br>详细描述如下：</p>
+<ul>
+<li>一个惊叹号<code>！</code></li>
+<li>接着一个方括号，里面放入图片的替代文字</li>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号抱住加上title<br>参考式：</li>
+</ul>
+<pre><code>![Alt Text][id]
+[id]: url/to/image &quot;title&quot;
+</code></pre><p>效果：<br><img src="url/to/image" alt="Alt Text" title="title"></p>
+<p>Markdown 还不能指定图片的长宽。如果有需要的话可以用<code>&lt;img&gt;</code>标签。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p>用尖括号阔气来的连接地址或是电子邮箱自动把他转化成链接：</p>
+<pre><code>&lt;http://example.com/&gt;
+</code></pre><p>效果：<br><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a></p>
+<h2 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h2><p>用来转义。</p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>使用要删除的文字两边左右各加两个<code>~</code>。</p>
+<pre><code>~~这一行文字已经被删除了~~
+</code></pre><p>效果如下：<br><del>这一行文字已经被删除了</del></p>
+<h2 id="文字高亮"><a href="#文字高亮" class="headerlink" title="文字高亮"></a>文字高亮</h2><p>在想要高亮的文字左右各加俩个<code>=</code>:</p>
+<pre><code>==文字高亮==
+</code></pre><p>效果如下（如果没有做高亮就是不支持）：<br>==高亮==</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code>a|b|c
+---|-|-
+1|2|3
+</code></pre><table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> 实用技巧 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[什么是游戏引擎]]></title>
       <url>/archives/f4101fc3.html</url>
       <content type="html"><![CDATA[<p>既然要设计游戏引擎，所以我们首先得知道什么是游戏引擎。但是在了解游戏引擎的概念之前，我先探讨一下什么是游戏呢？</p>
@@ -411,14 +681,14 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
   
     
     <entry>
-      <title><![CDATA[timeline]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[timeline]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
