@@ -3,6 +3,99 @@
   
     
     <entry>
+      <title><![CDATA[什么是游戏引擎]]></title>
+      <url>/archives/f4101fc3.html</url>
+      <content type="html"><![CDATA[<p>既然要设计游戏引擎，所以我们首先得知道什么是游戏引擎。但是在了解游戏引擎的概念之前，我先探讨一下什么是游戏呢？</p>
+<h2 id="什么是游戏"><a href="#什么是游戏" class="headerlink" title="什么是游戏"></a>什么是游戏</h2><p>现在我们说的游戏可能是比较狭隘的游戏了，只是单纯指video game，也就是我们运行在电子产品上的视频游戏。但是游戏这个词本身是一个比较宽泛的概念，在我们小时候科技还没还未发展，电子产品还没有兴起的时候，我们也是可以呼朋引伴的玩游戏，诸如丢手绢、跳皮筋、打沙包等等。我也称这些活动为游戏。所以什么是游戏呢？</p>
+<p>我个人对游戏理解是：</p>
+<ol>
+<li>明确的规则</li>
+<li>一个和多个参与其中的玩家</li>
+<li>一个或是多个目的</li>
+<li>玩家在规则下使用各种方法和策略到达目的</li>
+</ol>
+<p>但是人为什么会想去玩游戏呢，我把它称之为<strong><em>体验</em></strong>。<br>在游戏中把自己代入角色体会现实中无法得到的体验（沉浸式体验）；打磨技术完成挑战（学习精进体验）；交友和放松心情（温暖舒心体验）。</p>
+<p>所以这就是游戏，它在我们的现实社会中扮演着非常重要的角色，使我们生活必不可少的元素。</p>
+<h2 id="什么是游戏引擎"><a href="#什么是游戏引擎" class="headerlink" title="什么是游戏引擎"></a>什么是游戏引擎</h2><p>游戏是对现实世界的一个模拟，模拟世界的花花草草、高山大川、高楼大厦、车水马龙等等；还有对时间的模拟，随着时间的流逝，各种事物的状态就会改变；还有一些自然规律的模拟，比如一些物理理论：自由落体、流体力学、刚体力学等等。</p>
+<p>这样一看游戏之间有很多共通点，这些共通点可以打包成一个模块供很多游戏使用，这其实就是一个游戏引擎的概念。</p>
+<p>最早的游戏引擎是id Software开发DOOM时提出的，他们把软件的一些核心组件进行划分，使得其中一部分可以经由id soft授权使用。那么这个就是早期游戏引擎的概念了。</p>
+<h3 id="游戏引擎的多样性"><a href="#游戏引擎的多样性" class="headerlink" title="游戏引擎的多样性"></a>游戏引擎的多样性</h3><p>首先游戏有不同的类型，所以不同游戏类型对游戏引擎的要求也不一样。就拿图形渲染来说，渲染室内和渲染广阔场景要求是不一样的。而且不仅是游戏类型导致的游戏引擎的多样性，硬件平台也是其中的因素，不同游戏引擎可能针对不同的硬件平台优化力度和偏向不同。所以通用的游戏引擎往往在性能表现上吃亏，因而设计出一款可以制作任何游戏的引擎可以说是天方夜谭。</p>
+<h3 id="现有知名游戏引擎"><a href="#现有知名游戏引擎" class="headerlink" title="现有知名游戏引擎"></a>现有知名游戏引擎</h3><ol>
+<li>Unreal 非常全能的游戏引擎，支持可视化开发，几乎可以完成任何FPS和第三人称的3D游戏。</li>
+<li>unity3D  几乎兼容所有的平台，易于学习和上手。</li>
+<li>CryEngine 让你的游戏更美丽，输出非常优质的画面。</li>
+<li>RAGE 复杂人工智能管理，可以去GTAV体验一下。</li>
+</ol>
+<p>还有好多非常优秀的游戏引擎，在这里就不一一举例了。</p>
+<h2 id="运行时引擎架构"><a href="#运行时引擎架构" class="headerlink" title="运行时引擎架构"></a>运行时引擎架构</h2><p><img src="/img/gameEngineArc.png" alt="arc"></p>
+<p>此图是出自《游戏引擎结构》这本书，它非常全面的为我们展示了游戏引擎的各个组件的划分和层级关系。</p>
+<p>对于硬件、驱动、操作系统都不是游戏引擎主要关注的部分，但是不同平台的游戏引擎设计思路还是有一定区别的，咱们下按下不表。</p>
+<h3 id="第三方软件开发包和中间件"><a href="#第三方软件开发包和中间件" class="headerlink" title="第三方软件开发包和中间件"></a>第三方软件开发包和中间件</h3><ul>
+<li>数据结构及算法：STL、Boost、Loki。</li>
+<li>图形：硬件接口库OpenGL/DirectX、libgcm、Edge</li>
+<li>碰撞和物理：Havok、PhysX、ODE</li>
+<li>动画：Granny、Havok Animation、Edge</li>
+<li>人工智能： Kynapse</li>
+<li>生物力学角色模型：Endorphin和Euphoria</li>
+</ul>
+<h3 id="平台独立层"><a href="#平台独立层" class="headerlink" title="平台独立层"></a>平台独立层</h3><p>包装常用的标准C语言库、操作系统调用以及其他基础API，保证封装的接口在不同的平台上都一样。</p>
+<h3 id="核心系统"><a href="#核心系统" class="headerlink" title="核心系统"></a>核心系统</h3><ul>
+<li>单元测试</li>
+<li>数学库</li>
+<li>内存管理</li>
+</ul>
+<p>一些实用性软件集合。</p>
+<h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>为各种各样的资源：贴图、网格、音频、字幕等资源提供一个统一的管理入库。</p>
+<h3 id="渲染引擎"><a href="#渲染引擎" class="headerlink" title="渲染引擎"></a>渲染引擎</h3><p>游戏引擎中最大最复杂的一个组件之一。</p>
+<p>低阶渲染器：实用各种图形设备接口DirectX和OpenGL等，摄像机、光照几何图元的提交。<br>场景剔除与优化：空间剖析<br>视觉效果：粒子效果、动态阴影、HDR、FSAA等<br>前端：HUD、fMV、IGC、内置菜单</p>
+<h3 id="剖析和调试工具"><a href="#剖析和调试工具" class="headerlink" title="剖析和调试工具"></a>剖析和调试工具</h3><p>内存以及性能统计工具</p>
+<h3 id="碰撞和物理"><a href="#碰撞和物理" class="headerlink" title="碰撞和物理"></a>碰撞和物理</h3><ul>
+<li>力以及约束</li>
+<li>刚体</li>
+<li>物理碰撞</li>
+</ul>
+<p>Havok和PhysX</p>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><ul>
+<li>刚体层次结构动画</li>
+<li>骨骼动画</li>
+<li>每顶点D动画</li>
+</ul>
+<h3 id="人体接口设备"><a href="#人体接口设备" class="headerlink" title="人体接口设备"></a>人体接口设备</h3><ul>
+<li>键盘鼠标</li>
+<li>手柄</li>
+<li>其他游戏设备</li>
+</ul>
+<p>检测输入和判断一下复杂的组合输入</p>
+<h3 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h3><p>管理游戏里面的音频文件</p>
+<h3 id="在线多人"><a href="#在线多人" class="headerlink" title="在线多人"></a>在线多人</h3><ul>
+<li>单屏多人</li>
+<li>切割屏多人</li>
+<li>网络多人</li>
+<li>大型多人在线游戏</li>
+</ul>
+<h3 id="游戏基础系统"><a href="#游戏基础系统" class="headerlink" title="游戏基础系统"></a>游戏基础系统</h3><p>游戏性指游戏内进行的活动、支配游戏世界的规则、玩家新角色能力、其他玩家的能力和玩家长期和短期的目标。<br>可以利用一些开发效率较高的脚本语言来设计实现。</p>
+<h3 id="个别游戏系统"><a href="#个别游戏系统" class="headerlink" title="个别游戏系统"></a>个别游戏系统</h3><p>这个是在游戏引擎没有包含，而游戏需要，所以为了个别游戏定制的系统。</p>
+<h2 id="工具和资产管道"><a href="#工具和资产管道" class="headerlink" title="工具和资产管道"></a>工具和资产管道</h2><p>游戏中存在各种数据，都是可以使用专有的工具设计出来的，但是这些数据包含了工具本身一些数据，所以游戏引擎不能直接使用，所以可以利用资产管道把这些数据处理成游戏引擎可以使用的数据。</p>
+<p>还有一种工具就是世界编辑器，可以让玩家自定义游戏世界。</p>
+<p>工具可以独立架构，或是和运行时库使用同样的框架构建。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 游戏引擎 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 游戏引擎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[游戏引擎概述]]></title>
       <url>/archives/67e448db.html</url>
       <content type="html"><![CDATA[<p>本人一直对游戏引擎很感兴趣，而且现在入职的公司是做gpu，所以趁此机会系统的学习一下游戏引擎的知识。</p>
@@ -318,14 +411,14 @@ set(CMAKE_CXX_FLAGS_RELEASE &quot;$ENV{CXXFLAGS} -O3 -Wall&quot;)
   
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[timeline]]></title>
+      <url>/timeline/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[timeline]]></title>
-      <url>/timeline/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     

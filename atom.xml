@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.stblog.top/"/>
-  <updated>2020-03-28T12:53:56.000Z</updated>
+  <updated>2020-03-29T09:52:14.000Z</updated>
   <id>http://www.stblog.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>什么是游戏引擎</title>
+    <link href="http://www.stblog.top/archives/f4101fc3.html"/>
+    <id>http://www.stblog.top/archives/f4101fc3.html</id>
+    <published>2020-03-29T05:06:02.000Z</published>
+    <updated>2020-03-29T09:52:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;既然要设计游戏引擎，所以我们首先得知道什么是游戏引擎。但是在了解游戏引擎的概念之前，我先探讨一下什么是游戏呢？&lt;/p&gt;
+&lt;h2 id=&quot;什么是游戏&quot;&gt;&lt;a href=&quot;#什么是游戏&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="游戏引擎" scheme="http://www.stblog.top/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    
+      <category term="游戏引擎" scheme="http://www.stblog.top/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>游戏引擎概述</title>
